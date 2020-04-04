@@ -21,6 +21,7 @@
 
     <p class="view"><a href="https://jbellissimo.github.io/">home</a></p>
     <p class="view"><a href="https://jbellissimo.github.io/blog/">blog</a></p>
+	    <p class="view"><a href="mailto:jbellissimo@gmail.com">email</a></p>
       <p class="view"><a href="https://jbellissimo.github.io/resume">resume</a></p>
     <p class="view"><a href="https://twitter.com/bellissimojt">twitter</a></p>
     <!--p class="view"><a href="mailto:jbellissimo@gmail.com">email</a></p-->
@@ -30,13 +31,13 @@
       </header>
       <section>
         
-<p>What I Learned from Lee Kuan Yew.</p> 
+<p>I am the Chief Operating Officer at <a href="http://www.tsgreporting.com/">TSG Reporting</a>.</p> 
 
-<p> </p>
+<p>TSG Reporting is a global litigation company that services AM Law 200 firms and multi-national corporations.</p>
 
-<p> </p>
+<p>Before coming to TSG, I worked in real estate finance, asset management, and portfolio administration at a fund of funds.</p>
 
-<p> </p>
+<p>Originally from Hicksville, New York, I hold a B.S. in Finance from the University of Maryland, College Park.</p>
 
       </section>
       <footer>
