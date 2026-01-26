@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Projects | Jess Bellissimo</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+      /* Project Cards */
+      .project-card {
+        background: #fafafa;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 24px;
+        transition: box-shadow 0.2s ease;
+      }
+      .project-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .project-title {
+        margin: 0;
+        font-size: 20px;
+        color: #222;
+      }
+      .project-tagline {
+        color: #666;
+        font-style: italic;
+        margin: 0 0 16px 0;
+        font-size: 14px;
+      }
+      .project-description {
+        margin: 0 0 16px 0;
+        line-height: 1.6;
+      }
+      .project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .badge-live {
+        background: #d4edda;
+        color: #155724;
+      }
+      .badge-beta {
+        background: #fff3cd;
+        color: #856404;
+      }
+      .badge-prototype {
+        background: #e2e3e5;
+        color: #495057;
+      }
+      .tech-tag {
+        display: inline-block;
+        padding: 4px 10px;
+        background: #e9ecef;
+        border-radius: 4px;
+        font-size: 11px;
+        color: #495057;
+      }
+      .btn-project {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #39c;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 13px;
+        transition: background 0.2s ease;
+      }
+      .btn-project:hover {
+        background: #2a8abd;
+        color: #fff;
+      }
+      .section-intro {
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .section-intro p {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      .brand-highlight {
+        color: #F5A623;
+        font-weight: 700;
+      }
+      /* Footer styles */
+      .page-footer {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid #e5e5e5;
+      }
+      .footer-nav {
+        margin-bottom: 16px;
+      }
+      .footer-nav a {
+        margin-right: 16px;
+      }
+      .footer-social a {
+        margin-right: 12px;
+        color: #777;
+      }
+      .footer-social a:hover {
+        color: #39c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jess Bellissimo</h1>
+        <p></p>
+        <h3>
+          <a name="projects" class="anchor" href="#projects"><span class="octicon octicon-link"></span></a>Civic Tech Builder
+        </h3>
+        <p>GreenLights Civic Tech</p>
+        <hr/>
+
+        <p class="view"><a href="/">Home</a></p>
+        <p class="view"><a href="/projects.html"><strong>Projects</strong></a></p>
+        <p class="view"><a href="/blog/">Writing</a></p>
+        <p class="view"><a href="/about.html">About</a></p>
+      </header>
+
+      <section>
+        <div class="section-intro">
+          <h2>Projects</h2>
+          <p>
+            I'm building tools to make government more transparent and efficient for citizens and small businesses.
+            These projects live under <span class="brand-highlight">GreenLights Civic Tech</span> — focused on
+            Huntington, NY → NYC → New York State.
+          </p>
+        </div>
+
+        <!-- Project 1: GreenLights Portfolio -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">GreenLights Civic Tech Portfolio</h3>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p class="project-tagline">Making NYC Transparent</p>
+          <p class="project-description">
+            The umbrella brand and portfolio landing page for all civic tech projects.
+            Showcases the vision of using technology to bring transparency and efficiency
+            to local government services.
+          </p>
+          <div class="project-meta">
+            <span class="tech-tag">Bolt.new</span>
+          </div>
+          <a href="https://greenlights-civic-te-n82v.bolt.host/" target="_blank" rel="noopener" class="btn-project">View Project →</a>
+        </div>
+
+        <!-- Project 2: Democracy Scorecard -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">Democracy Scorecard</h3>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p class="project-tagline">Congressional Stock Trading Transparency</p>
+          <p class="project-description">
+            Scores members of Congress on corruption risk based on their stock trading activity.
+            Uses public financial disclosure data to surface potential conflicts of interest
+            and unusual trading patterns.
+          </p>
+          <div class="project-meta">
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">Python</span>
+          </div>
+          <a href="https://democracy-scorecard.streamlit.app/" target="_blank" rel="noopener" class="btn-project">View Project →</a>
+        </div>
+
+        <!-- Project 3: GreenLight NYC -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">GreenLight NYC</h3>
+            <span class="badge badge-live">Live</span>
+          </div>
+          <p class="project-tagline">Permit Transparency for Small Businesses</p>
+          <p class="project-description">
+            NYC building permit transparency tool exposing the "wait tax" on small businesses.
+            Tracks ALT-2 permit processing times to show which applications get stuck in the system
+            and how long businesses actually wait.
+          </p>
+          <div class="project-meta">
+            <span class="tech-tag">Bolt.new</span>
+          </div>
+          <a href="https://open-doors-wait-tax-md08.bolt.host" target="_blank" rel="noopener" class="btn-project">View Project →</a>
+        </div>
+
+        <!-- Project 4: Beacon Pulse -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">Beacon Pulse</h3>
+            <span class="badge badge-beta">Beta</span>
+          </div>
+          <p class="project-tagline">Block-by-Block City Service Transparency</p>
+          <p class="project-description">
+            Hyper-local transparency map showing which NYC blocks get city services fast and which are ignored.
+            550+ blocks mapped with 311 response times, crime data, and air quality metrics at
+            block-level granularity — not just neighborhood averages.
+          </p>
+          <div class="project-meta">
+            <span class="tech-tag">Bolt.new</span>
+            <span class="tech-tag">Leaflet.js</span>
+          </div>
+          <a href="https://beacon-pulse-nyc-tra-74m4.bolt.host" target="_blank" rel="noopener" class="btn-project">View Project →</a>
+        </div>
+
+        <!-- Page Footer -->
+        <div class="page-footer">
+          <div class="footer-nav">
+            <a href="/">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/blog/">Writing</a>
+            <a href="/about.html">About</a>
+          </div>
+          <div class="footer-social">
+            <a href="https://x.com/bellissimojt" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://www.linkedin.com/in/jessbellissimo/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:jbellissimo@gmail.com">Email</a>
+          </div>
+          <p><small>Hosted on GitHub Pages</small></p>
+        </div>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+  </body>
+</html>
