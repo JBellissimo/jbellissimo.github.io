@@ -1,21 +1,143 @@
----
-layout: default
-title: Writing
----
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Writing | Jess Bellissimo</title>
 
-<h2>Writing</h2>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+      .section-header {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .post-card {
+        background: #fafafa;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 24px;
+        transition: box-shadow 0.2s ease;
+      }
+      .post-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .post-date {
+        font-size: 12px;
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+      }
+      .post-title {
+        margin: 0 0 12px 0;
+        font-size: 20px;
+      }
+      .post-title a {
+        color: #222;
+      }
+      .post-title a:hover {
+        color: #39c;
+      }
+      .post-excerpt {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
+      .read-more {
+        font-weight: 700;
+      }
+      /* Footer styles */
+      .page-footer {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid #e5e5e5;
+      }
+      .footer-nav {
+        margin-bottom: 16px;
+      }
+      .footer-nav a {
+        margin-right: 16px;
+      }
+      .footer-social {
+        margin-bottom: 24px;
+      }
+      .footer-social a {
+        margin-right: 12px;
+      }
+      .footer-credit {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+      }
+      .footer-credit small {
+        font-size: 10px;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jess Bellissimo</h1>
+        <p></p>
+        <h3>
+          <a name="writing" class="anchor" href="#writing"><span class="octicon octicon-link"></span></a>Executive Operator
+        </h3>
+        <p>Learning AI by Building</p>
+        <hr/>
 
-<p>Thoughts on building civic tech, operational systems, and learning in public.</p>
+        <p class="view"><a href="/">Home</a></p>
+        <p class="view"><a href="/projects.html">Projects</a></p>
+        <p class="view"><a href="/blog/"><strong>Writing</strong></a></p>
+        <p class="view"><a href="/about.html">About</a></p>
+      </header>
 
-<ul class="post-list">
-{% for post in site.posts %}
-  <li>
-    <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span><br>
-    <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+      <section>
+        <div class="section-header">
+          <h2>Writing</h2>
+        </div>
 
-{% if site.posts.size == 0 %}
-<p><em>No posts yet. Check back soon.</em></p>
-{% endif %}
+        <div class="post-card">
+          <div class="post-date">January 2026</div>
+          <h3 class="post-title">
+            <a href="/blog/greenlight-nyc-permits.html">GreenLight NYC: Lessons from Building a Permit Transparency Tool</a>
+          </h3>
+          <p class="post-excerpt">
+            What happens when you build to learn? I spent 1-2 days building a NYC permit transparency tool,
+            only to discover the problem wasn't as big as I thought. Here's what I learned about rapid
+            prototyping, data validation, and knowing when to pivot.
+          </p>
+          <a href="/blog/greenlight-nyc-permits.html" class="read-more">Read More →</a>
+        </div>
+
+        <!-- Page Footer -->
+        <div class="page-footer">
+          <div class="footer-nav">
+            <a href="/">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/blog/">Writing</a>
+            <a href="/about.html">About</a>
+          </div>
+          <div class="footer-social">
+            <a href="https://x.com/bellissimojt" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://www.linkedin.com/in/jessbellissimo/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:jbellissimo@gmail.com">Email</a>
+          </div>
+          <div class="footer-credit">
+            <small>Hosted on GitHub Pages</small>
+          </div>
+        </div>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/javascripts/scale.fix.js"></script>
+  </body>
+</html>

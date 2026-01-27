@@ -1,0 +1,459 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>GreenLight NYC: Lessons from Building a Permit Transparency Tool | Jess Bellissimo</title>
+
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+      .back-link {
+        display: inline-block;
+        margin-bottom: 24px;
+        font-size: 14px;
+      }
+      .post-header {
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .post-meta {
+        font-size: 13px;
+        color: #999;
+        margin-bottom: 16px;
+      }
+      .post-meta span {
+        margin-right: 16px;
+      }
+      .post-title {
+        font-size: 28px;
+        line-height: 1.2;
+        margin: 0 0 8px 0;
+      }
+      .post-subtitle {
+        font-size: 16px;
+        color: #666;
+        font-weight: 400;
+        margin: 0;
+      }
+      .post-content {
+        line-height: 1.8;
+      }
+      .post-content h2 {
+        margin-top: 40px;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #39c;
+        font-size: 20px;
+      }
+      .post-content h3 {
+        margin-top: 32px;
+        margin-bottom: 12px;
+        font-size: 16px;
+        color: #333;
+      }
+      .post-content p {
+        margin-bottom: 16px;
+      }
+      .post-content ul, .post-content ol {
+        margin-bottom: 16px;
+        padding-left: 24px;
+      }
+      .post-content li {
+        margin-bottom: 8px;
+      }
+      .post-content strong {
+        color: #222;
+      }
+      .post-content a {
+        text-decoration: underline;
+      }
+      .highlight-box {
+        background: #f8f9fa;
+        border-left: 4px solid #39c;
+        padding: 16px 20px;
+        margin: 24px 0;
+      }
+      .highlight-box p {
+        margin: 0;
+      }
+      .quote-box {
+        background: #fafafa;
+        border-radius: 6px;
+        padding: 16px 20px;
+        margin: 24px 0;
+        font-style: italic;
+        color: #555;
+      }
+      .tools-list {
+        background: #f8f9fa;
+        border-radius: 6px;
+        padding: 16px 20px;
+        margin: 24px 0;
+      }
+      .tools-list p {
+        margin: 4px 0;
+        font-size: 14px;
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #39c;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: 16px;
+      }
+      .cta-button:hover {
+        background: #2a8abd;
+        color: #fff;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #e5e5e5;
+        margin: 32px 0;
+      }
+      /* Footer styles */
+      .page-footer {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid #e5e5e5;
+      }
+      .footer-nav {
+        margin-bottom: 16px;
+      }
+      .footer-nav a {
+        margin-right: 16px;
+      }
+      .footer-social {
+        margin-bottom: 24px;
+      }
+      .footer-social a {
+        margin-right: 12px;
+      }
+      .footer-credit {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+      }
+      .footer-credit small {
+        font-size: 10px;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jess Bellissimo</h1>
+        <p></p>
+        <h3>
+          <a name="writing" class="anchor" href="#writing"><span class="octicon octicon-link"></span></a>Executive Operator
+        </h3>
+        <p>Learning AI by Building</p>
+        <hr/>
+
+        <p class="view"><a href="/">Home</a></p>
+        <p class="view"><a href="/projects.html">Projects</a></p>
+        <p class="view"><a href="/blog/"><strong>Writing</strong></a></p>
+        <p class="view"><a href="/about.html">About</a></p>
+      </header>
+
+      <section>
+        <a href="/projects.html" class="back-link">← Back to Projects</a>
+
+        <div class="post-header">
+          <div class="post-meta">
+            <span>January 2026</span>
+            <span>Case Study</span>
+          </div>
+          <h1 class="post-title">GreenLight NYC</h1>
+          <p class="post-subtitle">Business Permit Transparency — Lessons from Building to Learn</p>
+        </div>
+
+        <div class="tools-list">
+          <p><strong>URL:</strong> <a href="https://open-doors-wait-tax-md08.bolt.host" target="_blank">open-doors-wait-tax-md08.bolt.host</a></p>
+          <p><strong>Status:</strong> Live prototype, holding before public promotion</p>
+          <p><strong>Built:</strong> January 2026 — 2-4 working sessions over 1-2 days, then iterations</p>
+          <p><strong>Tools:</strong> Gemini Pro, Claude Pro, Claude Code (VS Studio), Bolt.new</p>
+        </div>
+
+        <div class="post-content">
+
+          <h2>The Hypothesis</h2>
+
+          <p>There's significant value trapped in government processes. In a perfect world, we'd have AI-assisted reviews for every permit type, available 24/7. Humans stay in the loop—lending domain expertise, identifying where intervention is needed, coding their knowledge into systems.</p>
+
+          <p><strong>The specific opportunity:</strong> NYC business permit approvals, specifically <a href="https://www1.nyc.gov/site/buildings/industry/alterations.page" target="_blank">ALT-2 permits</a> (Interior Alterations for commercial spaces—cafes, offices, salons). These are the most frequently filed permit type in NYC.</p>
+
+          <p><strong>The timing:</strong> Zohran Mamdani's tech-forward administration receptive to new approaches is in early days of governance. His <a href="https://www.nyc.gov/office-of-the-mayor/news/068-25/mayor-adams-executive-order-11-establishing-regulatory-review-task-force" target="_blank">Executive Order #11</a> called for reviewing all city regulations to reduce the "Friction Tax" on small businesses—creating an opening for innovation.</p>
+
+          <div class="highlight-box">
+            <p><strong>Initial assumption:</strong> Permit delays create a "wait tax" worth billions to business owners. While permits are pending: businesses pay rent on closed spaces, employees may be on payroll without revenue, and opportunity cost compounds daily (~$400/day in carry costs).</p>
+          </div>
+
+          <p>With an assumed ~47-day average approval time and ~50,000 permits filed annually, this looked like massive trapped value. A talented data scientist could calculate the value locked in each business by zip code, business type, and square footage—the potential impact seemed enormous.</p>
+
+          <p><strong>The belief:</strong> City government should serve citizens and businesses. Help them open ASAP. Publish requirements with clear expectations. If every municipality open-sourced their rules and published them with annotations and links (like Genius for government regulations), technology could unlock this. Regardless of political affiliation, race, or economic status—we should build government to suit its people.</p>
+
+          <hr>
+
+          <h2>The Build</h2>
+
+          <h3>Phase 1: Ideation (Gemini voice mode - 1-2 days)</h3>
+
+          <p>Used Gemini conversationally to brainstorm ways a municipality could leverage tech to positively impact constituents. Looking for low-hanging fruit where AI could optimize processes and reduce wait times.</p>
+
+          <p><strong>Workflow:</strong></p>
+          <ul>
+            <li>Started conversations in voice mode</li>
+            <li>For longer thoughts: switched to keyboard to type, then clicked microphone to have Gemini transcribe</li>
+            <li>Let Gemini respond in text</li>
+            <li>Clicked microphone again for "shallow voice mode"—asked it to respond verbally</li>
+            <li>Continued same chat over 1-2 days</li>
+          </ul>
+
+          <p><strong>End of Phase 1:</strong> Asked Gemini to summarize the conversation and opportunity assessment. Specifically focused on ALT-2 Business Permits in NYC—chosen because I lived there and the new administration appeared receptive to innovation.</p>
+
+          <p><strong>Lesson learned:</strong> Context window degradation likely reduced quality of later recommendations. When using voice for extended ideation sessions, periodically start fresh conversations to maintain quality.</p>
+
+          <p><strong>What didn't work:</strong> Trying to test voice mode while driving. Not particularly efficient—need focused time for this kind of exploration.</p>
+
+          <h3>Phase 2: Data Validation & Analysis (Claude chat)</h3>
+
+          <p>Moved from Gemini to Claude for deeper data validation before building anything.</p>
+
+          <p>Used Claude to pull from NYC Open Data and analyze ALT-2 permit processing times. This is where assumptions started to crack.</p>
+
+          <h3>Phase 3: Prototyping (Claude Code + Bolt.new - 1 day)</h3>
+
+          <p><strong>Tools progression:</strong></p>
+          <ol>
+            <li><strong>Claude chat</strong> - Data analysis, validation, strategy</li>
+            <li><strong>Claude Code in VS Studio</strong> - Building, file management, structure</li>
+            <li><strong>Bolt.new</strong> - Rapid front-end generation (first time using this tool)</li>
+          </ol>
+
+          <p><strong>Timeline:</strong></p>
+          <ul>
+            <li>Total project: 1-2 days</li>
+            <li>Bolt.new: Working prototype in first session</li>
+            <li>Published: Same day as initial build</li>
+            <li>Iterations: Back and forth between Claude Code (building) and Claude chat (explanations, GitHub backup guidance)</li>
+          </ul>
+
+          <p><strong>Cost:</strong> All tools on paid tier ($20/month each: Gemini Pro, Claude Pro, Bolt.new). Used majority of Bolt allocation in first day.</p>
+
+          <p><strong>The test:</strong> Could someone with operator experience (not deep coding background) ship working prototypes using AI tools?</p>
+
+          <p><strong>Result:</strong> Yes—published working site in 1 day.</p>
+
+          <hr>
+
+          <h2>What the Data Revealed</h2>
+
+          <p>Initial hypothesis: ~47-day average approval time, ~50,000 permits/year, massive "wait tax" on small businesses.</p>
+
+          <p><strong>Reality after Claude's analysis:</strong></p>
+          <ul>
+            <li>75% of ALT-2 permits process in &lt;2 weeks (mostly renewals, no problem)</li>
+            <li>25% averaged 95 days (but reasons unclear)</li>
+            <li>Affected volume: ~12,500 businesses/year, not 50,000</li>
+          </ul>
+
+          <div class="quote-box">
+            <p><strong>Critical feedback from Drew (data scientist friend):</strong> "Are businesses actually losing money while waiting?"</p>
+          </div>
+
+          <p>Good point: In Manhattan retail, landlords often pay for Tenant Improvements as part of lease negotiations. Business doesn't move in or pay rent until build-out is completed.</p>
+
+          <p><strong>My realization:</strong> Lease structures vary significantly. Manhattan retail ≠ outer borough mom & pop shops. Sophisticated commercial tenants ≠ small bodegas. Mamdani's focus is likely outer borough small businesses where the tenant pays for build-outs and bears the cost of delays.</p>
+
+          <p><strong>The data trust issue:</strong> Initial data returns told one story, but I'm not confident enough in the conclusions. Used Claude to pull from NYC Open Data, but didn't independently validate the analysis deeply enough. The 25% with 95-day delays might be due to physical world constraints—permits tabled because the applicant needs to make physical alterations (ADA compliance, structural corrections) before approval.</p>
+
+          <p>This is an example of where your "flight heading" could be a few degrees off because you trusted an assumption or decision made by AI without stress-testing it yourself.</p>
+
+          <div class="highlight-box">
+            <p><strong>Honest assessment:</strong> Problem exists but is narrower and more nuanced than initial hypothesis. Can't confidently say this is crisis-level until data is cleaner and independently validated.</p>
+          </div>
+
+          <hr>
+
+          <h2>What I Learned</h2>
+
+          <h3>Technical Skills</h3>
+          <ul>
+            <li><strong>Gemini voice mode:</strong> Excellent for rapid ideation, but context window degrades over multi-day conversations. Start fresh periodically.</li>
+            <li><strong>Voice workflow quirk:</strong> Switching between typing (for transcription) and clicking mic (for voice response) works, but feels clunky. Need focused environment—not while driving.</li>
+            <li><strong>Claude vs Claude Code:</strong> Chat interface good for analysis/strategy, Code in VS Studio for actual building.</li>
+            <li><strong>Bolt.new:</strong> Powerful for non-technical builders. First time using it, produced working front-end immediately. Lower barrier to prototyping than expected. Burns through monthly allocation fast.</li>
+            <li><strong>Tool chain that worked:</strong> Gemini (ideation) → Claude (validation) → Claude Code (structure) → Bolt (execution)</li>
+          </ul>
+
+          <h3>Process & Judgment</h3>
+          <ul>
+            <li><strong>Seek domain expert feedback early.</strong> Drew's landlord/TI insight shifted my understanding of who actually bears the cost of delays.</li>
+            <li><strong>Trust but verify.</strong> I relied on Claude's data analysis without independent validation. Should have dug deeper into NYC Open Data myself before building.</li>
+            <li><strong>Nuance matters.</strong> Manhattan retail ≠ outer borough mom & pop. Lease structures vary. One-size-fits-all analysis misses reality.</li>
+            <li><strong>Know when to pause.</strong> Drew suggested contacting Mamdani's team directly (they're hyper-online and responsive). I decided to wait—"you get one shot at a first impression." Better to refine or pivot before going public.</li>
+            <li><strong>When vibe coding, resist 1-shot website copy.</strong> People can tell when language isn't dialed in. Clearly articulating problems and solutions requires depth. I approached this with humility—shallow understanding can generate insights, but you need to acknowledge the gaps.</li>
+          </ul>
+
+          <h3>Product Thinking</h3>
+          <ul>
+            <li><strong>Simplification principle matters.</strong> Question all requirements. Throughout my career, I've refined workflows to be highly effective and comprehensive. First principle: simplify.</li>
+            <li><strong>Modern company-building approach works.</strong> Demo the prototype, gain supporters on social media, validate concept before building full product and paying for scale.</li>
+            <li><strong>Real unlock isn't technical.</strong> The tools are ready. A non-technical operator can now ship working prototypes to test ideas. The bottleneck isn't coding ability anymore—it's idea quality and data validation.</li>
+            <li><strong>Collaboration accelerates impact.</strong> Linking with developers, data scientists, and domain experts would make projects like this more rigorous.</li>
+          </ul>
+
+          <h3>What This Project Was Really Testing</h3>
+
+          <p>As much about testing AI tools as testing the business hypothesis.</p>
+
+          <p><strong>Questions I was answering:</strong></p>
+          <ol>
+            <li>Can Gemini voice mode generate quality ideas?</li>
+            <li>Can Claude validate those ideas with data?</li>
+            <li>Can Claude Code + Bolt produce working websites?</li>
+            <li>Can someone with CEO/COO skills (not deep technical background) ship prototypes?</li>
+          </ol>
+
+          <p><strong>Answers:</strong></p>
+          <ol>
+            <li>Yes, but context window management matters</li>
+            <li>Yes—Claude caught my wrong assumptions (when I dug deeper)</li>
+            <li>Yes—working site in 1 day</li>
+            <li>Yes—this is the unlock</li>
+          </ol>
+
+          <hr>
+
+          <h2>The Decision</h2>
+
+          <p><strong>Status:</strong> Live prototype, but holding before public promotion.</p>
+
+          <p><strong>Why:</strong></p>
+          <ul>
+            <li>Data confidence too low to pitch publicly</li>
+            <li>Needs independent validation of NYC Open Data</li>
+            <li>Should segment analysis by geography (outer boroughs) and business type (tenant-responsible vs. landlord TI)</li>
+            <li>Physical world constraints vs. bureaucratic delays still unclear</li>
+          </ul>
+
+          <p><strong>Drew's suggestion:</strong> Contact Mamdani's team directly—they're online and accessible.</p>
+
+          <p><strong>My call:</strong> Wait. Either:</p>
+          <ol>
+            <li>Deepen data analysis and refine scope, OR</li>
+            <li>Pivot to higher-impact civic tech opportunity</li>
+          </ol>
+
+          <div class="highlight-box">
+            <p><strong>Portfolio value:</strong> Demonstrates that I validate assumptions, seek expert feedback, and kill or pause projects when data doesn't support them. The workflow proved itself even if this specific problem wasn't the right one.</p>
+          </div>
+
+          <hr>
+
+          <h2>If I Continued - What I'd Do Differently</h2>
+
+          <h3>1. Deeper data work</h3>
+          <ul>
+            <li>Pull raw permit data from NYC Open Data myself</li>
+            <li>Independently validate Claude's analysis</li>
+            <li>Segment by borough, business type, lease structure</li>
+            <li>Interview small business owners in outer boroughs about actual costs</li>
+          </ul>
+
+          <h3>2. Calculate actual "cost per day"</h3>
+          <ul>
+            <li>Rent paid while closed (varies by neighborhood)</li>
+            <li>Employee costs (if applicable—likely not for small shops)</li>
+            <li>Revenue opportunity cost</li>
+            <li>Segment by zip code, square footage, business type</li>
+          </ul>
+
+          <h3>3. Identify real bottlenecks</h3>
+          <ul>
+            <li>Which permit types actually have systemic problems?</li>
+            <li>Where is bureaucratic red tape vs. legitimate review needed?</li>
+            <li>What can be automated vs. what requires human judgment?</li>
+            <li>Why do 25% take 95 days? Physical corrections needed or process breakdown?</li>
+          </ul>
+
+          <h3>4. Add "prove it" session</h3>
+          <p>There has to be a framework companies use (Anthropic, Y Combinator) for stress-testing core assumptions before building. I was more focused on proving the tools worked than proving the problem existed. Next time: prove the problem first.</p>
+
+          <hr>
+
+          <h2>What This Project Proved</h2>
+
+          <ul>
+            <li>I can ship working prototypes in 1-2 days using AI tools</li>
+            <li>I validate with data and expert feedback, not just assumptions</li>
+            <li>I pause or kill projects when hypotheses don't hold</li>
+            <li>I care about impact (serving citizens and businesses), not just building for building's sake</li>
+          </ul>
+
+          <p><strong>The meta-lesson:</strong> Technology should unlock government efficiency. We can and should build systems where humans lend expertise while AI handles routine processing. This specific implementation wasn't the right problem, but the approach and tools work.</p>
+
+          <p><strong>The real unlock:</strong> The modern way to build—ship prototype, gather feedback, validate problem, iterate or pivot—works. And AI tools make this accessible to operators without deep technical backgrounds.</p>
+
+          <hr>
+
+          <h2>What's Next</h2>
+
+          <p><strong>Options being explored:</strong></p>
+          <ol>
+            <li><strong>Benefits Access Navigator</strong> - Help New Yorkers find and claim government benefits (SNAP, housing vouchers, healthcare)—higher impact, millions affected vs. thousands</li>
+            <li><strong>311 Modernization</strong> - Block-by-block transparency map showing which neighborhoods get city services fast and which are ignored</li>
+            <li><strong>Deeper dive on this project</strong> - If right data partner or city contact emerges</li>
+          </ol>
+
+          <p><strong>Current status:</strong> GreenLight NYC remains live as portfolio piece. Demonstrates rapid prototyping, data-driven decision making, and willingness to pivot when evidence demands it.</p>
+
+          <hr>
+
+          <div class="tools-list">
+            <p><strong>Built:</strong> January 2026</p>
+            <p><strong>Timeline:</strong> 2-4 sessions over 1-2 days + iterations</p>
+            <p><strong>Tools:</strong> Gemini Pro ($20/mo), Claude Pro ($20/mo), Claude Code (VS Studio), Bolt.new ($20/mo)</p>
+            <p><strong>Status:</strong> Live prototype, paused pending deeper validation or pivot decision</p>
+          </div>
+
+          <p>
+            <a href="https://open-doors-wait-tax-md08.bolt.host" target="_blank" class="cta-button">View Live Project →</a>
+          </p>
+
+        </div>
+
+        <!-- Page Footer -->
+        <div class="page-footer">
+          <div class="footer-nav">
+            <a href="/">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/blog/">Writing</a>
+            <a href="/about.html">About</a>
+          </div>
+          <div class="footer-social">
+            <a href="https://x.com/bellissimojt" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://www.linkedin.com/in/jessbellissimo/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:jbellissimo@gmail.com">Email</a>
+          </div>
+          <div class="footer-credit">
+            <small>Hosted on GitHub Pages</small>
+          </div>
+        </div>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/javascripts/scale.fix.js"></script>
+  </body>
+</html>
