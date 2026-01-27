@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <style>
-      .intro {
-        margin: 24px 0 32px 0;
+      .hero {
+        margin-bottom: 32px;
       }
-      .intro p {
+      .hero .tagline {
+        color: #39c;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .hero p {
         font-size: 15px;
         line-height: 1.7;
         margin-bottom: 12px;
@@ -47,6 +53,29 @@
         background: #e9ecef;
         color: #333;
       }
+      .recent-work {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid #e5e5e5;
+      }
+      .recent-work h3 {
+        margin-bottom: 16px;
+      }
+      .work-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 16px 0;
+      }
+      .work-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .work-list li:last-child {
+        border-bottom: none;
+      }
+      .work-list strong {
+        color: #222;
+      }
       /* Footer styles */
       .page-footer {
         margin-top: 40px;
@@ -59,12 +88,20 @@
       .footer-nav a {
         margin-right: 16px;
       }
+      .footer-social {
+        margin-bottom: 24px;
+      }
       .footer-social a {
         margin-right: 12px;
-        color: #777;
       }
-      .footer-social a:hover {
-        color: #39c;
+      .footer-credit {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+      }
+      .footer-credit small {
+        font-size: 10px;
+        color: #999;
       }
     </style>
   </head>
@@ -86,17 +123,28 @@
       </header>
 
       <section>
-        <div class="intro">
+        <div class="hero">
+          <p class="tagline">Building. Learning. Shipping.</p>
           <p>
-            <strong>Former CEO/COO.</strong> Grew companies from $12M to $45M.
+            19 years building companies. Now learning to build with AI tools.
           </p>
           <p>
-            Now: Building civic tech projects to learn AI tools.
+            Recent projects built in 1-2 days each.
           </p>
           <div class="cta-buttons">
             <a href="/projects.html" class="btn-primary">View Projects</a>
             <a href="/about.html" class="btn-secondary">About Me</a>
           </div>
+        </div>
+
+        <div class="recent-work">
+          <h3>Recent Work</h3>
+          <ul class="work-list">
+            <li><strong>Congressional Transparency Scorecard</strong> — Track stock trading by members of Congress</li>
+            <li><strong>GreenLight NYC</strong> — NYC permit processing analysis</li>
+            <li><strong>Beacon Pulse</strong> — Block-by-block city service map</li>
+          </ul>
+          <p><a href="/projects.html">→ See all projects</a></p>
         </div>
 
         <!-- Page Footer -->
@@ -112,7 +160,9 @@
             <a href="https://www.linkedin.com/in/jessbellissimo/" target="_blank" rel="noopener">LinkedIn</a>
             <a href="mailto:jbellissimo@gmail.com">Email</a>
           </div>
-          <p><small>Hosted on GitHub Pages</small></p>
+          <div class="footer-credit">
+            <small>Hosted on GitHub Pages</small>
+          </div>
         </div>
 
       </section>
