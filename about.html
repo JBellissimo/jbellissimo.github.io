@@ -14,61 +14,67 @@
         padding-bottom: 16px;
         border-bottom: 1px solid #e5e5e5;
       }
-      .highlight-box {
-        background: #f8f9fa;
-        border-left: 4px solid #39c;
-        padding: 16px 20px;
-        margin: 24px 0;
-      }
-      .highlight-box p {
-        margin: 0;
-      }
-      .journey-section {
+      .about-section {
         margin: 32px 0;
       }
-      .journey-section h3 {
-        color: #39c;
-        margin-bottom: 12px;
-      }
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        margin: 24px 0;
-      }
-      .stat-item {
-        background: #fafafa;
-        border: 1px solid #e5e5e5;
-        border-radius: 6px;
-        padding: 16px;
-        text-align: center;
-      }
-      .stat-number {
-        font-size: 28px;
-        font-weight: 700;
+      .about-section h3 {
         color: #222;
-        display: block;
-      }
-      .stat-label {
-        font-size: 12px;
-        color: #666;
+        font-size: 16px;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #39c;
+        display: inline-block;
       }
-      .focus-list {
+      .about-section p {
+        line-height: 1.7;
+      }
+      .project-list {
         list-style: none;
         padding: 0;
+        margin: 16px 0;
       }
-      .focus-list li {
+      .project-list li {
         padding: 8px 0;
-        padding-left: 24px;
-        position: relative;
+        border-bottom: 1px solid #f0f0f0;
       }
-      .focus-list li:before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: #39c;
+      .project-list li:last-child {
+        border-bottom: none;
+      }
+      .project-list a {
+        font-weight: 700;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin: 16px 0;
+      }
+      .skills-grid ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+      .skills-grid li {
+        margin-bottom: 6px;
+      }
+      .looking-for {
+        background: #f8f9fa;
+        border-radius: 6px;
+        padding: 20px;
+        margin: 16px 0;
+      }
+      .looking-for ul {
+        margin: 12px 0 0 0;
+        padding-left: 20px;
+      }
+      .contact-block {
+        margin-top: 24px;
+      }
+      .contact-block a {
+        display: inline-block;
+        margin-right: 20px;
+        font-weight: 700;
       }
       /* Footer styles */
       .page-footer {
@@ -90,7 +96,7 @@
         color: #39c;
       }
       @media screen and (max-width: 480px) {
-        .stats-grid {
+        .skills-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -102,9 +108,9 @@
         <h1>Jess Bellissimo</h1>
         <p></p>
         <h3>
-          <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>Civic Tech Builder
+          <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>Executive Operator
         </h3>
-        <p>GreenLights Civic Tech</p>
+        <p>Learning AI by Building</p>
         <hr/>
 
         <p class="view"><a href="/">Home</a></p>
@@ -118,78 +124,89 @@
           <h2>About</h2>
         </div>
 
-        <div class="highlight-box">
-          <p><strong>Operator turned builder.</strong> After 19+ years running businesses, I'm now building civic tech tools to make government work better for citizens and small businesses.</p>
+        <div class="about-section">
+          <h3>The Background</h3>
+          <p>
+            19+ years as a CEO and COO running service businesses in legal tech, logistics, and disaster restoration.
+            Scaled revenue from $13M to $44M and exited to a PE-backed strategic acquirer.
+          </p>
+          <p>
+            What I'm good at: building operating systems that actually work. Sales playbooks, delivery workflows,
+            financial controls, team structures. The unsexy infrastructure that lets organizations scale
+            without falling apart.
+          </p>
         </div>
 
-        <div class="journey-section">
-          <h3>The Operator Years</h3>
+        <div class="about-section">
+          <h3>Current Focus</h3>
           <p>
-            I spent nearly two decades as a COO and CEO, building and scaling real businesses with real constraints.
-            I've led services-heavy organizations through growth, complexity, and exit.
+            Right now I'm obsessed with civic tech — tools that make government more transparent and efficient
+            for citizens and small businesses.
           </p>
+          <p>
+            The goal: reduce reliance on purely manual human work and shift toward human-in-the-loop systems
+            where AI handles the grunt work and humans focus on judgment calls. I'm using AI assistance
+            to build faster and learn what's actually possible.
+          </p>
+        </div>
 
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-number">19+</span>
-              <span class="stat-label">Years Operating</span>
+        <div class="about-section">
+          <h3>The Projects</h3>
+          <p>Everything below was built in roughly a day, then iterated over the following days.</p>
+          <ul class="project-list">
+            <li><a href="https://democracy-scorecard.streamlit.app/" target="_blank">Democracy Scorecard</a> — Congressional stock trading transparency</li>
+            <li><a href="https://open-doors-wait-tax-md08.bolt.host" target="_blank">GreenLight NYC</a> — Permit processing times for small businesses</li>
+            <li><a href="https://beacon-pulse-nyc-tra-74m4.bolt.host" target="_blank">Beacon Pulse</a> — Block-by-block city service response map</li>
+            <li><a href="https://greenlights-civic-te-n82v.bolt.host/" target="_blank">GreenLights Portfolio</a> — Umbrella brand for civic tech work</li>
+          </ul>
+          <p><a href="/projects.html">See detailed project breakdowns →</a></p>
+        </div>
+
+        <div class="about-section">
+          <h3>What I'm Learning</h3>
+          <div class="skills-grid">
+            <div>
+              <strong>Technical</strong>
+              <ul>
+                <li>Prompt engineering & AI workflows</li>
+                <li>Python, Streamlit, data pipelines</li>
+                <li>Rapid prototyping with Bolt.new</li>
+                <li>GitHub, version control, deployment</li>
+              </ul>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">$13M→$44M</span>
-              <span class="stat-label">Revenue Scaled</span>
+            <div>
+              <strong>Process</strong>
+              <ul>
+                <li>Building in public</li>
+                <li>Ship fast, learn faster</li>
+                <li>Validating ideas with real data</li>
+                <li>AI-assisted development workflows</li>
+              </ul>
             </div>
           </div>
-
-          <p>
-            I built operating playbooks across sales, operations, finance, and delivery.
-            I designed systems that removed friction, increased throughput, and created accountability.
-            Then I helped exit to a PE-backed strategic acquirer.
-          </p>
         </div>
 
-        <div class="journey-section">
-          <h3>The Shift</h3>
-          <p>
-            Now I'm applying that same operational mindset to civic problems.
-            I'm not building apps to demo well — I'm building tools that expose how systems actually work
-            and where they break down.
-          </p>
-          <p>
-            My current focus is <strong>GreenLights Civic Tech</strong>: a series of transparency tools
-            starting in NYC and expanding outward. The goal is simple — make it easier for citizens
-            and small businesses to see what's really happening with their government.
-          </p>
-        </div>
-
-        <div class="journey-section">
-          <h3>Current Focus</h3>
-          <ul class="focus-list">
-            <li><strong>Geographic scope:</strong> Huntington, NY → NYC → New York State → US</li>
-            <li><strong>Problem space:</strong> Government transparency and efficiency</li>
-            <li><strong>Approach:</strong> Build prototypes fast, learn from real data, iterate</li>
-            <li><strong>Philosophy:</strong> Apply AI where it compounds leverage, not where it demos well</li>
-          </ul>
-        </div>
-
-        <div class="journey-section">
-          <h3>Background</h3>
-          <p>
-            Originally from Hicksville, New York. B.S. in Finance from the University of Maryland, College Park.
-            Before the CEO/COO track, I worked in real estate finance, asset management, and portfolio administration.
-          </p>
-        </div>
-
-        <div class="journey-section">
-          <h3>Get in Touch</h3>
-          <p>
-            I'm always interested in connecting with people working on civic tech, government efficiency,
-            or operational challenges. Reach out anytime.
-          </p>
-          <p>
-            <strong>Email:</strong> <a href="mailto:jbellissimo@gmail.com">jbellissimo@gmail.com</a><br>
-            <strong>Twitter:</strong> <a href="https://x.com/bellissimojt" target="_blank" rel="noopener">@bellissimojt</a><br>
-            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jessbellissimo/" target="_blank" rel="noopener">jessbellissimo</a>
-          </p>
+        <div class="about-section">
+          <h3>What I'm Looking For</h3>
+          <div class="looking-for">
+            <p>
+              Open to roles where operational experience, AI fluency, and bias toward action matter.
+            </p>
+            <ul>
+              <li>Solutions Engineering</li>
+              <li>Product Operations</li>
+              <li>Strategic Initiatives</li>
+            </ul>
+            <p style="margin-top: 16px;">
+              Particularly interested in companies building foundational AI tools.
+              Currently exploring opportunities.
+            </p>
+          </div>
+          <div class="contact-block">
+            <a href="https://x.com/bellissimojt" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://www.linkedin.com/in/jessbellissimo/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:jbellissimo@gmail.com">Email</a>
+          </div>
         </div>
 
         <!-- Page Footer -->
