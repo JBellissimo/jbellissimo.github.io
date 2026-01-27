@@ -9,15 +9,56 @@
     <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <style>
-      .back-link {
-        display: inline-block;
-        margin-bottom: 24px;
-        font-size: 14px;
+      /* Override default layout for full-width article */
+      body {
+        padding: 40px 20px;
       }
-      .post-header {
+      .wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      header {
+        width: 100%;
+        float: none;
+        position: static;
         margin-bottom: 32px;
         padding-bottom: 24px;
         border-bottom: 1px solid #e5e5e5;
+      }
+      header h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .site-nav {
+        margin-top: 16px;
+      }
+      .site-nav a {
+        margin-right: 20px;
+        font-weight: 400;
+      }
+      .site-nav a.active {
+        font-weight: 700;
+      }
+      section {
+        width: 100%;
+        float: none;
+        padding-bottom: 40px;
+      }
+      footer {
+        width: 100%;
+        float: none;
+        position: static;
+      }
+
+      /* Article styles */
+      .back-link {
+        display: inline-block;
+        margin-bottom: 32px;
+        font-size: 14px;
+      }
+      .post-header {
+        margin-bottom: 40px;
       }
       .post-meta {
         font-size: 13px;
@@ -28,41 +69,44 @@
         margin-right: 16px;
       }
       .post-title {
-        font-size: 28px;
+        font-size: 32px;
         line-height: 1.2;
-        margin: 0 0 8px 0;
+        margin: 0 0 12px 0;
       }
       .post-subtitle {
-        font-size: 16px;
+        font-size: 18px;
         color: #666;
         font-weight: 400;
         margin: 0;
+        line-height: 1.5;
       }
       .post-content {
-        line-height: 1.8;
+        line-height: 1.9;
+        font-size: 16px;
       }
       .post-content h2 {
-        margin-top: 40px;
-        margin-bottom: 16px;
+        margin-top: 48px;
+        margin-bottom: 20px;
         padding-bottom: 8px;
         border-bottom: 2px solid #39c;
-        font-size: 20px;
+        font-size: 22px;
       }
       .post-content h3 {
-        margin-top: 32px;
-        margin-bottom: 12px;
-        font-size: 16px;
+        margin-top: 36px;
+        margin-bottom: 16px;
+        font-size: 18px;
         color: #333;
       }
       .post-content p {
-        margin-bottom: 16px;
+        margin-bottom: 20px;
       }
       .post-content ul, .post-content ol {
-        margin-bottom: 16px;
-        padding-left: 24px;
+        margin-bottom: 20px;
+        padding-left: 28px;
       }
       .post-content li {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        line-height: 1.7;
       }
       .post-content strong {
         color: #222;
@@ -73,8 +117,8 @@
       .highlight-box {
         background: #f8f9fa;
         border-left: 4px solid #39c;
-        padding: 16px 20px;
-        margin: 24px 0;
+        padding: 20px 24px;
+        margin: 28px 0;
       }
       .highlight-box p {
         margin: 0;
@@ -82,30 +126,31 @@
       .quote-box {
         background: #fafafa;
         border-radius: 6px;
-        padding: 16px 20px;
-        margin: 24px 0;
+        padding: 20px 24px;
+        margin: 28px 0;
         font-style: italic;
         color: #555;
       }
       .tools-list {
         background: #f8f9fa;
         border-radius: 6px;
-        padding: 16px 20px;
-        margin: 24px 0;
+        padding: 20px 24px;
+        margin: 28px 0;
       }
       .tools-list p {
-        margin: 4px 0;
-        font-size: 14px;
+        margin: 6px 0;
+        font-size: 15px;
       }
       .cta-button {
         display: inline-block;
-        padding: 12px 24px;
+        padding: 14px 28px;
         background: #39c;
         color: #fff;
         border-radius: 5px;
         font-weight: 700;
         text-decoration: none;
-        margin-top: 16px;
+        margin-top: 20px;
+        font-size: 15px;
       }
       .cta-button:hover {
         background: #2a8abd;
@@ -114,25 +159,26 @@
       hr {
         border: none;
         border-top: 1px solid #e5e5e5;
-        margin: 32px 0;
+        margin: 40px 0;
       }
+
       /* Footer styles */
       .page-footer {
-        margin-top: 40px;
-        padding-top: 24px;
+        margin-top: 48px;
+        padding-top: 32px;
         border-top: 1px solid #e5e5e5;
       }
       .footer-nav {
         margin-bottom: 16px;
       }
       .footer-nav a {
-        margin-right: 16px;
+        margin-right: 20px;
       }
       .footer-social {
         margin-bottom: 24px;
       }
       .footer-social a {
-        margin-right: 12px;
+        margin-right: 16px;
       }
       .footer-credit {
         margin-top: 32px;
@@ -140,26 +186,43 @@
         border-top: 1px solid #f0f0f0;
       }
       .footer-credit small {
-        font-size: 10px;
+        font-size: 11px;
         color: #999;
+      }
+
+      /* Mobile responsive */
+      @media screen and (max-width: 600px) {
+        body {
+          padding: 20px 16px;
+        }
+        .post-title {
+          font-size: 26px;
+        }
+        .post-subtitle {
+          font-size: 16px;
+        }
+        .post-content {
+          font-size: 15px;
+        }
+        .post-content h2 {
+          font-size: 20px;
+        }
+        .post-content h3 {
+          font-size: 17px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1>Jess Bellissimo</h1>
-        <p></p>
-        <h3>
-          <a name="writing" class="anchor" href="#writing"><span class="octicon octicon-link"></span></a>Executive Operator
-        </h3>
-        <p>Learning AI by Building</p>
-        <hr/>
-
-        <p class="view"><a href="/">Home</a></p>
-        <p class="view"><a href="/projects.html">Projects</a></p>
-        <p class="view"><a href="/blog/"><strong>Writing</strong></a></p>
-        <p class="view"><a href="/about.html">About</a></p>
+        <h1><a href="/" style="color: #222; text-decoration: none;">Jess Bellissimo</a></h1>
+        <div class="site-nav">
+          <a href="/">Home</a>
+          <a href="/projects.html">Projects</a>
+          <a href="/blog/" class="active">Writing</a>
+          <a href="/about.html">About</a>
+        </div>
       </header>
 
       <section>
