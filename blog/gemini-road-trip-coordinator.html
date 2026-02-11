@@ -1,250 +1,423 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini as Road Trip Coordinator - JB</title>
-    <link rel="stylesheet" href="../stylesheets/scale.fix.css">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Gemini as Road Trip Coordinator | Jess Bellissimo</title>
+
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <style>
+      /* Override default layout for full-width article */
+      body {
+        padding: 40px 20px;
+      }
+      .wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      header {
+        width: 100%;
+        float: none;
+        position: static;
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      header h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .site-nav {
+        margin-top: 16px;
+      }
+      .site-nav a {
+        margin-right: 20px;
+        font-weight: 400;
+      }
+      .site-nav a.active {
+        font-weight: 700;
+      }
+      section {
+        width: 100%;
+        float: none;
+        padding-bottom: 40px;
+      }
+      footer {
+        width: 100%;
+        float: none;
+        position: static;
+      }
+
+      /* Article styles */
+      .back-link {
+        display: inline-block;
+        margin-bottom: 32px;
+        font-size: 14px;
+      }
+      .post-header {
+        margin-bottom: 40px;
+      }
+      .post-meta {
+        font-size: 13px;
+        color: #999;
+        margin-bottom: 16px;
+      }
+      .post-meta span {
+        margin-right: 16px;
+      }
+      .post-title {
+        font-size: 32px;
+        line-height: 1.2;
+        margin: 0 0 12px 0;
+      }
+      .post-subtitle {
+        font-size: 18px;
+        color: #666;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.5;
+      }
+      .post-content {
+        line-height: 1.9;
+        font-size: 16px;
+      }
+      .post-content h2 {
+        margin-top: 48px;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #39c;
+        font-size: 22px;
+      }
+      .post-content h3 {
+        margin-top: 36px;
+        margin-bottom: 16px;
+        font-size: 18px;
+        color: #333;
+      }
+      .post-content p {
+        margin-bottom: 20px;
+      }
+      .post-content ul, .post-content ol {
+        margin-bottom: 20px;
+        padding-left: 28px;
+      }
+      .post-content li {
+        margin-bottom: 10px;
+        line-height: 1.7;
+      }
+      .post-content strong {
+        color: #222;
+      }
+      .post-content a {
+        text-decoration: underline;
+      }
+      .post-content table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 28px 0;
+      }
+      .post-content th, .post-content td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      .post-content th {
+        background-color: #f6f8fa;
+        font-weight: 600;
+      }
+      .highlight-box {
+        background: #f8f9fa;
+        border-left: 4px solid #39c;
+        padding: 20px 24px;
+        margin: 28px 0;
+      }
+      .highlight-box p {
+        margin: 0;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #e5e5e5;
+        margin: 40px 0;
+      }
+
+      /* Footer styles */
+      .page-footer {
+        margin-top: 48px;
+        padding-top: 32px;
+        border-top: 1px solid #e5e5e5;
+      }
+      .footer-nav {
+        margin-bottom: 16px;
+      }
+      .footer-nav a {
+        margin-right: 20px;
+      }
+      .footer-social {
+        margin-bottom: 24px;
+      }
+      .footer-social a {
+        margin-right: 16px;
+      }
+      .footer-credit {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+      }
+      .footer-credit small {
+        font-size: 11px;
+        color: #999;
+      }
+
+      /* Mobile responsive */
+      @media screen and (max-width: 600px) {
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+          padding: 20px 16px;
         }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 0.5em;
-            line-height: 1.2;
+        .post-title {
+          font-size: 26px;
         }
-        h2 {
-            font-size: 1.5em;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0.3em;
+        .post-subtitle {
+          font-size: 16px;
         }
-        .date {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 2em;
+        .post-content {
+          font-size: 15px;
         }
-        a {
-            color: #0366d6;
-            text-decoration: none;
+        .post-content h2 {
+          font-size: 20px;
         }
-        a:hover {
-            text-decoration: underline;
+        .post-content h3 {
+          font-size: 17px;
         }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 1.5em 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f6f8fa;
-            font-weight: 600;
-        }
-        strong {
-            font-weight: 600;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid #eee;
-            margin: 2em 0;
-        }
-        .back-link {
-            margin-top: 3em;
-            padding-top: 1em;
-            border-top: 1px solid #eee;
-        }
+      }
     </style>
-</head>
-<body>
-    <h1>Gemini as Road Trip Coordinator: From Answering Questions to Managing Decisions</h1>
-    <div class="date">February 11, 2026</div>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="/" style="color: #222; text-decoration: none;">Jess Bellissimo</a></h1>
+        <div class="site-nav">
+          <a href="/">Home</a>
+          <a href="/projects.html">Projects</a>
+          <a href="/blog/" class="active">Writing</a>
+          <a href="/about.html">About</a>
+        </div>
+      </header>
 
-    <p>Josh Woodward's recent piece on <a href="https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/" target="_blank">Gemini Personal Intelligence</a> told a story I recognized immediately. Standing in line at a tire shop, he needed tire recommendations. Gemini suggested options for his specific vehicle, then went further—cross-referencing his family road trip photos to recommend all-weather tires. When he needed his license plate number, it pulled the seven digits from a photo.</p>
+      <section>
+        <a href="/blog/" class="back-link">← Back to Writing</a>
 
-    <p>This wasn't just retrieval. It was <strong>surfacing the right information at the right moment</strong>.</p>
+        <div class="post-header">
+          <div class="post-meta">
+            <span>February 11, 2026</span>
+            <span>Essay</span>
+          </div>
+          <h1 class="post-title">Gemini as Road Trip Coordinator</h1>
+          <p class="post-subtitle">From Answering Questions to Managing Decisions</p>
+        </div>
 
-    <p>And it points to something bigger: assistants that don't just answer questions, but actively coordinate decisions in real time.</p>
+        <div class="post-content">
 
-    <hr>
+          <p>Josh Woodward's recent piece on <a href="https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/" target="_blank">Gemini Personal Intelligence</a> told a story I recognized immediately. Standing in line at a tire shop, he needed tire recommendations. Gemini suggested options for his specific vehicle, then went further—cross-referencing his family road trip photos to recommend all-weather tires. When he needed his license plate number, it pulled the seven digits from a photo.</p>
 
-    <h2>The Missing Layer</h2>
+          <p>This wasn't just retrieval. It was <strong>surfacing the right information at the right moment</strong>.</p>
 
-    <p>Last week, I drove from Huntington, NY to Saratoga Springs, NY—about four hours. I had to meet a contractor for a 1 PM meeting. I couldn't leave until at least 8 AM and wanted to be aware of traffic. Before pulling out, I was juggling:</p>
+          <p>And it points to something bigger: assistants that don't just answer questions, but actively coordinate decisions in real time.</p>
 
-    <ul>
-        <li><strong>Departure timing</strong> (avoiding peak traffic windows)</li>
-        <li><strong>Gas</strong> (I had 125 miles to empty for a 220-mile one-way trip—would definitely need to refuel)</li>
-        <li><strong>Breakfast/Coffee</strong> (McDonald's is my guilty road trip pleasure; they only serve breakfast until 10:30 AM on weekdays)</li>
-        <li><strong>Audio</strong> (I love podcasts—ideally a multi-modal playlist mixing podcast episodes, Spotify playlists, and maybe even NotebookLM summaries of recent articles I've saved)</li>
-        <li><strong>Errands</strong> (My wife asked me to drop off a return at the UPS store. There's one in my town, but whether it was open depended on when I left. Plus, I could stop at any UPS store along the route)</li>
-        <li><strong>Bathroom</strong> (Four-hour trip. Depending on gas/breakfast decisions, this would cascade into a reminder to use the bathroom, refill water, etc. Like most people, I'd want to batch these into one rest stop or highway exit)</li>
-    </ul>
+          <hr>
 
-    <p>Google and Waze already know all of this:</p>
-    <ul>
-        <li>My location (Google Maps/Waze)</li>
-        <li>My destination (Google Calendar)</li>
-        <li>Real-time traffic (Google Maps/Waze)</li>
-        <li>My preferences (Google Search history, Places)</li>
-        <li>Store hours (Google Search, Maps)</li>
-        <li>Audio library (YouTube, YouTube Music, podcast subscriptions, Spotify)</li>
-    </ul>
+          <h2>The Missing Layer</h2>
 
-    <p>But I still orchestrated everything myself.</p>
+          <p>Last week, I drove from Huntington, NY to Saratoga Springs, NY—about four hours. I had to meet a contractor for a 1 PM meeting. I couldn't leave until at least 8 AM and wanted to be aware of traffic. Before pulling out, I was juggling:</p>
 
-    <p>An hour in, I asked Gemini for food recommendations. It suggested restaurants. Near my home. While I was already 60 miles north.</p>
+          <ul>
+            <li><strong>Departure timing</strong> (avoiding peak traffic windows)</li>
+            <li><strong>Gas</strong> (I had 125 miles to empty for a 220-mile one-way trip—would definitely need to refuel)</li>
+            <li><strong>Breakfast/Coffee</strong> (McDonald's is my guilty road trip pleasure; they only serve breakfast until 10:30 AM on weekdays)</li>
+            <li><strong>Audio</strong> (I love podcasts—ideally a multi-modal playlist mixing podcast episodes, Spotify playlists, and maybe even NotebookLM summaries of recent articles I've saved)</li>
+            <li><strong>Errands</strong> (My wife asked me to drop off a return at the UPS store. There's one in my town, but whether it was open depended on when I left. Plus, I could stop at any UPS store along the route)</li>
+            <li><strong>Bathroom</strong> (Four-hour trip. Depending on gas/breakfast decisions, this would cascade into a reminder to use the bathroom, refill water, etc. Like most people, I'd want to batch these into one rest stop or highway exit)</li>
+          </ul>
 
-    <p>Not catastrophic. But revealing.</p>
+          <p>Google and Waze already know all of this:</p>
+          <ul>
+            <li>My location (Google Maps/Waze)</li>
+            <li>My destination (Google Calendar)</li>
+            <li>Real-time traffic (Google Maps/Waze)</li>
+            <li>My preferences (Google Search history, Places)</li>
+            <li>Store hours (Google Search, Maps)</li>
+            <li>Audio library (YouTube, YouTube Music, podcast subscriptions, Spotify)</li>
+          </ul>
 
-    <hr>
+          <p>But I still orchestrated everything myself.</p>
 
-    <h2>What a Road Trip Actually Is</h2>
+          <p>An hour in, I asked Gemini for food recommendations. It suggested restaurants. Near my home. While I was already 60 miles north.</p>
 
-    <p>A long drive isn't a series of isolated requests. It's a <strong>decision dependency graph</strong>.</p>
+          <p>Not catastrophic. But revealing.</p>
 
-    <table>
-        <thead>
-            <tr>
+          <hr>
+
+          <h2>What a Road Trip Actually Is</h2>
+
+          <p>A long drive isn't a series of isolated requests. It's a <strong>decision dependency graph</strong>.</p>
+
+          <table>
+            <thead>
+              <tr>
                 <th>Decision</th>
                 <th>Constraint</th>
                 <th>Google Already Has</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
                 <td>Departure</td>
                 <td>Minimize traffic against meeting time</td>
                 <td>Maps/Waze, Calendar</td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
                 <td>Gas</td>
                 <td>Need refuel within 220 miles, ideally bundled</td>
                 <td>Maps, Location, Waze, Fuel data</td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
                 <td>Breakfast</td>
                 <td>On route, &lt;10:30 AM, minimal detour</td>
                 <td>Maps/Waze, Traffic, Places, Time</td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
                 <td>Audio</td>
                 <td>Multi-modal playlist for ~4 hours</td>
                 <td>YouTube, Podcasts, Spotify, Saved articles</td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
                 <td>Errands</td>
                 <td>UPS hours, any location on route</td>
                 <td>Search, Maps</td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
                 <td>Bathroom</td>
                 <td>Predictable on long trips; batch with gas/food</td>
                 <td>Trip state, stop history</td>
-            </tr>
-        </tbody>
-    </table>
+              </tr>
+            </tbody>
+          </table>
 
-    <p>These aren't independent. They <strong>cascade</strong>.</p>
+          <p>These aren't independent. They <strong>cascade</strong>.</p>
 
-    <p>If I'm stopping for gas anyway, evaluate whether bundling breakfast improves efficiency. If I'm stopping for breakfast after 90 minutes of driving, remind me to use the bathroom and refill water. If the UPS store is on-route and open, surface it before I pass. If I have four hours to fill, create a seamless audio experience that mixes podcasts with music without me constantly switching apps.</p>
+          <p>If I'm stopping for gas anyway, evaluate whether bundling breakfast improves efficiency. If I'm stopping for breakfast after 90 minutes of driving, remind me to use the bathroom and refill water. If the UPS store is on-route and open, surface it before I pass. If I have four hours to fill, create a seamless audio experience that mixes podcasts with music without me constantly switching apps.</p>
 
-    <p>None of this requires AGI. It requires <strong>coordination logic</strong>.</p>
+          <p>None of this requires AGI. It requires <strong>coordination logic</strong>.</p>
 
-    <hr>
+          <hr>
 
-    <h2>What I Actually Wanted</h2>
+          <h2>What I Actually Wanted</h2>
 
-    <p><strong>Instead of this:</strong></p>
-    <ul>
-        <li>Me: Opens Waze, enters destination</li>
-        <li>Me: Searches McDonald's in Waze, restarts search multiple times to show "along route"</li>
-        <li>Me: Manually checks detour times</li>
-        <li>Me: Checks clock against breakfast cutoff</li>
-        <li>Me: Decides on gas station separately</li>
-        <li>Me: Queues podcast, remembers to switch to music later</li>
-    </ul>
+          <p><strong>Instead of this:</strong></p>
+          <ul>
+            <li>Me: Opens Waze, enters destination</li>
+            <li>Me: Searches McDonald's in Waze, restarts search multiple times to show "along route"</li>
+            <li>Me: Manually checks detour times</li>
+            <li>Me: Checks clock against breakfast cutoff</li>
+            <li>Me: Decides on gas station separately</li>
+            <li>Me: Queues podcast, remembers to switch to music later</li>
+          </ul>
 
-    <p><strong>This:</strong></p>
-    <ul>
-        <li>Me (via Gemini Voice): "I need gas before Saratoga, want McDonald's breakfast, and need a 4-hour playlist"</li>
-        <li>Gemini + Waze: "McDonald's in 47 minutes, 2-minute detour, arrives 9:53 AM—within breakfast window. Shell station adjacent for gas. UPS store is 0.4 miles off-route, opens at 9 AM. Queuing podcast for first 90 minutes, then your usual driving playlist. I'll remind you about bathroom/water when you stop."</li>
-    </ul>
+          <p><strong>This:</strong></p>
+          <ul>
+            <li>Me (via Gemini Voice): "I need gas before Saratoga, want McDonald's breakfast, and need a 4-hour playlist"</li>
+            <li>Gemini + Waze: "McDonald's in 47 minutes, 2-minute detour, arrives 9:53 AM—within breakfast window. Shell station adjacent for gas. UPS store is 0.4 miles off-route, opens at 9 AM. Queuing podcast for first 90 minutes, then your usual driving playlist. I'll remind you about bathroom/water when you stop."</li>
+          </ul>
 
-    <p>That's not prescience. That's <strong>trip-state awareness</strong>.</p>
+          <p>That's not prescience. That's <strong>trip-state awareness</strong>.</p>
 
-    <hr>
+          <hr>
 
-    <h2>Why This Matters Beyond Road Trips: Solve the Commute</h2>
+          <h2>Why This Matters Beyond Road Trips: Solve the Commute</h2>
 
-    <p>Road trips are occasional. Commutes are daily.</p>
+          <p>Road trips are occasional. Commutes are daily.</p>
 
-    <p>Same decision structures:</p>
-    <ul>
-        <li>Leave now or in 15 minutes? (Traffic delta)</li>
-        <li>Coffee stop or skip? (Time cushion, preference)</li>
-        <li>Gym before or after work? (Calendar, location)</li>
-        <li>Audio continuity (Podcast, music, NotebookLM summary of saved article)</li>
-    </ul>
+          <p>Same decision structures:</p>
+          <ul>
+            <li>Leave now or in 15 minutes? (Traffic delta)</li>
+            <li>Coffee stop or skip? (Time cushion, preference)</li>
+            <li>Gym before or after work? (Calendar, location)</li>
+            <li>Audio continuity (Podcast, music, NotebookLM summary of saved article)</li>
+          </ul>
 
-    <p>Except now: <strong>high frequency, rapid learning loop, compounding value</strong>.</p>
+          <p>Except now: <strong>high frequency, rapid learning loop, compounding value</strong>.</p>
 
-    <p>Google Maps already knows Home and Work. It could use Calendar (in-office days, meeting times) or location patterns to offer:</p>
-    <ul>
-        <li>"Coffee at [usual spot] adds 6 minutes but preserves your 9 AM buffer"</li>
-        <li>"Gym now means skipping breakfast—worth it based on your afternoon meetings?"</li>
-        <li>"Traffic building—leave in next 10 minutes to maintain current arrival time"</li>
-        <li>"Queuing your saved podcast + playlist for 47-minute commute"</li>
-    </ul>
+          <p>Google Maps already knows Home and Work. It could use Calendar (in-office days, meeting times) or location patterns to offer:</p>
+          <ul>
+            <li>"Coffee at [usual spot] adds 6 minutes but preserves your 9 AM buffer"</li>
+            <li>"Gym now means skipping breakfast—worth it based on your afternoon meetings?"</li>
+            <li>"Traffic building—leave in next 10 minutes to maintain current arrival time"</li>
+            <li>"Queuing your saved podcast + playlist for 47-minute commute"</li>
+          </ul>
 
-    <p>No new data required. Just orchestration within Google's existing ecosystem.</p>
+          <p>No new data required. Just orchestration within Google's existing ecosystem.</p>
 
-    <p><strong>The daily commute is the killer app.</strong> Everyone has this problem 10+ times per week. Solve this, and you've created genuine daily value.</p>
+          <p><strong>The daily commute is the killer app.</strong> Everyone has this problem 10+ times per week. Solve this, and you've created genuine daily value.</p>
 
-    <hr>
+          <hr>
 
-    <h2>The Ask</h2>
+          <h2>The Ask</h2>
 
-    <p><strong>Google: Present yourself as the Commute/Road Trip Orchestrator.</strong></p>
+          <p><strong>Google: Present yourself as the Commute/Road Trip Orchestrator.</strong></p>
 
-    <p>Create a field for <strong>Personal Instructions</strong>—even a "Mad Libs" style questionnaire:</p>
-    <ul>
-        <li>Work location and typical commute times</li>
-        <li>Dietary preferences and favorite stops</li>
-        <li>Audio preferences (podcasts, music, news)</li>
-        <li>Typical errands (gym, coffee, UPS, dry cleaning)</li>
-        <li>Travel preferences (minimize stops, maximize efficiency, etc.)</li>
-    </ul>
+          <p>Create a field for <strong>Personal Instructions</strong>—even a "Mad Libs" style questionnaire:</p>
+          <ul>
+            <li>Work location and typical commute times</li>
+            <li>Dietary preferences and favorite stops</li>
+            <li>Audio preferences (podcasts, music, news)</li>
+            <li>Typical errands (gym, coffee, UPS, dry cleaning)</li>
+            <li>Travel preferences (minimize stops, maximize efficiency, etc.)</li>
+          </ul>
 
-    <p>If Gemini understands:</p>
-    <ul>
-        <li>Where I am and where I'm going</li>
-        <li>What constraints exist (time, range, preferences)</li>
-        <li>What I typically do</li>
-        <li>My Personal Instructions</li>
-    </ul>
+          <p>If Gemini understands:</p>
+          <ul>
+            <li>Where I am and where I'm going</li>
+            <li>What constraints exist (time, range, preferences)</li>
+            <li>What I typically do</li>
+            <li>My Personal Instructions</li>
+          </ul>
 
-    <p>Why am I still the orchestrator?</p>
+          <p>Why am I still the orchestrator?</p>
 
-    <p>Personal Intelligence is a meaningful step. Decision coordination feels like the natural evolution.</p>
+          <p>Personal Intelligence is a meaningful step. Decision coordination feels like the natural evolution.</p>
 
-    <p>I've been receiving the Personal Intelligence daily emails—decent so far. But this is the next layer.</p>
+          <p>I've been receiving the Personal Intelligence daily emails—decent so far. But this is the next layer.</p>
 
-    <p>I'd be happy to help design what that looks like.</p>
+          <p>I'd be happy to help design what that looks like.</p>
 
-    <div class="back-link">
-        <a href="../index.html">← Back to Home</a>
+        </div>
+
+        <!-- Page Footer -->
+        <div class="page-footer">
+          <div class="footer-nav">
+            <a href="/">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/blog/">Writing</a>
+            <a href="/about.html">About</a>
+          </div>
+          <div class="footer-social">
+            <a href="https://x.com/bellissimojt" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://www.linkedin.com/in/jessbellissimo/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:jbellissimo@gmail.com">Email</a>
+          </div>
+          <div class="footer-credit">
+            <small>Hosted on GitHub Pages</small>
+          </div>
+        </div>
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-</body>
+    <script src="/javascripts/scale.fix.js"></script>
+  </body>
 </html>
